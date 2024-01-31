@@ -1,0 +1,6 @@
+- hosts: local
+  name: Install configure ccp
+  gather_facts: true
+  become: no
+  roles:
+    - set-get-credentials

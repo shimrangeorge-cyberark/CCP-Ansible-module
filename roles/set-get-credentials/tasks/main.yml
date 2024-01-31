@@ -1,0 +1,34 @@
+---
+
+# Non-Production Approach
+
+- name: Basic demo retrieving credentials from Priv Cloud
+  cyberark.pas.cyberark_credential:
+    api_base_url: "{{ ccp_address }}"
+    app_id: "{{ cyberark_remote_app_id }}"
+    query: "Safe={{ cyberark_safe }};UserName={{ cyberark_account }}"
+    connection_timeout: 60
+    query_format: Exact
+    fail_request_on_password_change: True
+    reason: "requesting credential for Ansible deployment"
+  register: ccp_response
+
+- debug:
+     var:  ccp_response
+
+# More Production-Level Approach
+
+# - name: Advanced demo retrieving credentials from Priv Cloud
+#   cyberark_credential:
+#     api_base_url: "{{ ccp_address }}"
+#     validate_certs: yes
+#     client_cert: /etc/pki/ca-trust/source/client.pem
+#     client_key: /etc/pki/ca-trust/source/priv-key.pem
+#     app_id: "{{ cyberark_remote_app_id }}"
+#     query: "Safe={{ cyberark_safe }};UserName={{ cyberark_account }}"
+#     connection_timeout: 60
+#     query_format: Exact
+#     fail_request_on_password_change: True
+#     reason: "requesting credential for Ansible deployment"
+
+#   

@@ -1,9 +1,7 @@
 ---
 # defaults file for set-get-credentials
-#curl -svk "http://35.166.131.139/AIMWebService/api/Accounts?AppID=Siemens-Ansible-Remote&Safe=Shimran-Ansible-test&UserName=Hana-credential" | jq
+#curl -svk "http://35.166.131.139/AIMWebService/api/Accounts?AppID=Shimran-Ansible-Remote&Safe=Shimran-Ansible-test&UserName=My-credential" | jq
 ccp_address: http://35.166.131.139
 cyberark_remote_app_id: Shimran-Ansible-Remote
 cyberark_safe: Shimran-Ansible-test
-cyberark_account: Hana-credential
-
-
+cyberark_account: CA_PSQL-1
